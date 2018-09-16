@@ -1,6 +1,6 @@
-# Phaser 3 Learnings
+# Phaser3 Knowledge 
 
-This document contains simple explanations on how to do things using Phaser 3. It is not meant to be a definitive guide but a collection of my notes.
+This repository contains simple explanations on how to do things using Phaser 3. It is not meant to be a definitive guide but a collection of my notes.
 
 ## Animations
 
@@ -35,7 +35,7 @@ where:
 function create() {
 ...
   var frames = this.anims.generateFrameNumbers(
-    loadedSpritesheet,
+    spriteName,
     {
       start: startingFrame,
       end: endingFrame,
@@ -48,6 +48,12 @@ function create() {
     frames: frames,
     frameRate: frameRate
   }
+
+  this.anims.create(config);
+
+  var explosion = this.add.sprite(x, y, spriteName);
+
+  explosion.anims.play(key);
 ...
 }
 ```
